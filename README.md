@@ -40,6 +40,22 @@ echo $userLastSuccessfulLogin->created_at;
 ```
 
 
+Retrieving the IP address of last successful login attempt
+``` php
+$userLastSuccessfulLogin = User::find($id)->lastLoginIp();
+```
+
+Retrieving the timestamp of last successful login attempt
+``` php
+$userLastSuccessfulLogin = User::find($id)->lastLoginDate();
+```
+
+Retrieving the human friendly date for last successful login attempt
+``` php
+$userLastSuccessfulLogin = User::find($id)->lastLoginDateForHuman();
+```
+
+
 ## Testing
 
 ``` bash
