@@ -20,7 +20,7 @@ trait HasLoginAttempts
         return optional($loginAttempt->first());
     }
 
-    public function lastLoginIp()
+    public function lastLoginIp(): string
     {
         return $this->latestLoginAttempt()->ip_address;
     }
