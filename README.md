@@ -30,13 +30,13 @@ Next, add the `Salfade\LoginTracker\Traits\HasLoginAttempts` trait to your `User
 Retrieving the latest successful login attempt
 ``` php
 $userLastSuccessfulLogin = User::find($id)->latestLoginAttempt();
+echo $userLastSuccessfulLogin->ip_address;
+echo $userLastSuccessfulLogin->created_at;
 ```
 
 Retrieving all the successful login attempts
 ``` php
 $userLastSuccessfulLogin = User::find($id)->loginAttempts();
-echo $userLastSuccessfulLogin->is_address;
-echo $userLastSuccessfulLogin->created_at;
 ```
 
 
