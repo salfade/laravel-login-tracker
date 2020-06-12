@@ -25,8 +25,6 @@ class LoginTrackerServiceProvider extends ServiceProvider
                 CleanupLoginAttemptsCommand::class,
             ]);
         }
-
-
     }
 
     public function register()

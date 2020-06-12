@@ -33,6 +33,5 @@ class TestCase extends Orchestra
 
         include_once __DIR__.'/../database/migrations/create_login_attempts_table.php.stub';
         (new \CreateLoginAttemptsTable())->up();
-
     }
 }
