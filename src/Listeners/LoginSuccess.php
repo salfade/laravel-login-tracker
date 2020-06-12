@@ -27,6 +27,7 @@ class LoginSuccess
      */
     public function handle($event)
     {
+        logger('someone logged in');
         LoginAttempt::create([
             'user_id' => $event->user->id,
             'ip_address' => request()->ip(),

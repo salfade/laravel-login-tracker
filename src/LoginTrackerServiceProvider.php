@@ -25,6 +25,9 @@ class LoginTrackerServiceProvider extends ServiceProvider
                 CleanupLoginAttemptsCommand::class,
             ]);
         }
+
+        $this->app->register(LoginTrackerEventServiceProvider::class);
+
     }
 
     public function register()
