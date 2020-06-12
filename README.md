@@ -1,6 +1,6 @@
 # A simple package to track login attempts
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-login-tracker.svg?style=flat-square)](https://packagist.org/packages/salfade/laravel-login-tracker)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/salfade/laravel-login-tracker.svg?style=flat-square)](https://packagist.org/packages/salfade/laravel-login-tracker)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/salfade/laravel-login-tracker/run-tests?label=tests)](https://github.com/salfade/laravel-login-tracker/actions?query=workflow%3Arun-tests+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/salfade/laravel-login-tracker.svg?style=flat-square)](https://packagist.org/packages/salfade/laravel-login-tracker)
 
