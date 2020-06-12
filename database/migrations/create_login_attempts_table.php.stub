@@ -10,9 +10,8 @@ class CreateLoginAttemptsTable extends Migration
     {
         Schema::create('login_attempts', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-            // add fields
-
+            $table->foreignId('user_id');
+            $table->string('ip_address', 50);
             $table->timestamps();
         });
     }

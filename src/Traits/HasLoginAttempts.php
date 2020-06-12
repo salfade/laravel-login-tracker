@@ -19,4 +19,20 @@ trait HasLoginAttempts
 
         return optional($loginAttempt->first());
     }
+
+    public function lastLoginIp()
+    {
+        return $this->latestLoginAttempt()->ip_address;
+    }
+
+
+    public function lastLoginDate()
+    {
+        return $this->latestLoginAttempt()->created_at;
+    }
+
+    public function lastLoginDateForHuman()
+    {
+        return optional($this->latestLoginAttempt()->created_at)->diffForHumans();
+    }
 }
