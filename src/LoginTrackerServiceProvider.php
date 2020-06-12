@@ -27,7 +27,6 @@ class LoginTrackerServiceProvider extends ServiceProvider
         }
 
         $this->app->register(LoginTrackerEventServiceProvider::class);
-
     }
 
     public function register()
