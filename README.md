@@ -1,55 +1,44 @@
-# A simple package to track users successfull login attempts
+# A simple package to track login attempts
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-login-tracker.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-login-tracker)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/laravel-login-tracker/run-tests?label=tests)](https://github.com/spatie/laravel-login-tracker/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-login-tracker.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-login-tracker)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/salfade/laravel-login-tracker/run-tests?label=tests)](https://github.com/salfade/laravel-login-tracker/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/salfade/laravel-login-tracker.svg?style=flat-square)](https://packagist.org/packages/salfade/laravel-login-tracker)
 
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
 ## Support us
+[Buy us Coffee?](http://paypal.me/MohamedFawzan)
 
-Learn how to create a package like this one, by watching our premium video course:
-
-[![Laravel Package training](https://spatie.be/github/package-training.jpg)](https://laravelpackage.training)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
 ## Installation
-
-You can install the package via composer:
-
 ```bash
-composer require spatie/package-skeleton-laravel
+composer require salfade/laravel-login-tracker
 ```
 
-You can publish and run the migrations with:
-
+Publish and run the migrations with:
 ```bash
-php artisan vendor:publish --provider="Salfade\LoginTracker\SkeletonServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Salfade\LoginTracker\LoginTrackerServiceProvider" --tag="migrations"
 php artisan migrate
 ```
-
-You can publish the config file with:
-```bash
-php artisan vendor:publish --provider="Salfade\LoginTracker\SkeletonServiceProvider" --tag="config"
-```
-
-This is the contents of the published config file:
-
+Next, add the `Salfade\LoginTracker\Traits\HasLoginAttempts` trait to your `User` Model. 
 ```php
-return [
-];
+    use Salfade\LoginTracker\Traits\HasLoginAttempts;
 ```
 
 ## Usage
-
+Retrieving the latest successful login attempt
 ``` php
-$skeleton = new Salfade\LoginTracker();
-echo $skeleton->echoPhrase('Hello, Spatie!');
+$userLastSuccessfulLogin = User::find($id)->latestLoginAttempt();
 ```
+
+Retrieving all the successful login attempts
+``` php
+$userLastSuccessfulLogin = User::find($id)->loginAttempts();
+echo $userLastSuccessfulLogin->is_address;
+echo $userLastSuccessfulLogin->created_at;
+```
+
 
 ## Testing
 
@@ -67,7 +56,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
-If you discover any security related issues, please email freek@spatie.be instead of using the issue tracker.
+If you discover any security related issues, please email admin@salfade.com instead of using the issue tracker.
 
 ## Credits
 
