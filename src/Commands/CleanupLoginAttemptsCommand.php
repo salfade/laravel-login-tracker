@@ -12,5 +12,8 @@ class CleanupLoginAttemptsCommand extends Command
 
     public function handle()
     {
+        
+        $noOfDays = $this->argument('noOfDays');
+        Batch::whereDate('created_at', '<', Carbon::now()->subDays($noOfDays))->delete();
     }
 }
